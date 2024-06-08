@@ -1,0 +1,37 @@
+.itemDetailContainerComponent {
+    display: flex;
+    padding: 20px;
+    gap: 50px
+}
+
+.imageGallery {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.productImage {
+    width: 200px; 
+    height: 200px;
+    object-fit: cover; 
+    border-radius: 5px; 
+}
+
+.productDetails {
+    max-width: 600px; 
+}
+
+.productTitle {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.productDescription {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.productPrice {
+    font-size: 1.5rem;
+    color: #5bbec0; 
+}

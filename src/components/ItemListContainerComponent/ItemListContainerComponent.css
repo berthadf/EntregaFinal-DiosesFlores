@@ -1,5 +1,6 @@
 .itemListContainerComponent {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     color: black;
@@ -8,3 +9,22 @@
     width: 100vw;
     height: 80vh;
 }
+
+.link {
+    text-decoration: none;
+    color: #5bbec0; 
+    padding: 10px 20px; 
+    border: 1px solid #5bbec0; 
+    border-radius: 5px; 
+    display: inline-block; 
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .link:hover {
+    color:#a7cb68; 
+    border: 1px solid #a7cb68; 
+  }
+
+  .card {
+    font-size: 1rem;
+  }

@@ -3,3 +3,22 @@
     color: #5bbec0;
     font-size: 1.3rem;
 }
+
+.linkMenu {
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;
+}
+
+.linkMenu:hover {
+    color: #5bbec0;
+}
+
+.linkButton {
+    text-decoration: none;
+    color: black;
+}
+
+.linkButton:hover {
+    color: #5bbec0;
+}
