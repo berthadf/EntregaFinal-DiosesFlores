@@ -1,10 +1,14 @@
 import React from "react";
-import MainRouter from "./routes/MainRouter";
-
+import { CartProvider } from "./context/CartContext";
+import MainRoutes from "./routes/MainRoutes";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const App = () => {
-  return <MainRouter />;
-};
+function App() {
+  return (
+    <CartProvider>
+      <MainRoutes />
+    </CartProvider>
+  );
+}
 
 export default App;

@@ -1,13 +1,18 @@
 import React from 'react'
+import { useProductsByCategory } from '../hooks/useProductsByCategory';
 import ItemListContainerComponent from '../components/ItemListContainerComponent/ItemListContainerComponent';
 import { useParams } from 'react-router-dom';
-import { useProductsByCategory } from '../hooks/useProductsByCategory';
+import LoaderComponent from "../components/LoaderComponent/LoaderComponent";
 
 const Category = () => {
     const { id } = useParams();
-    const { products } = useProductsByCategory(id);
+    const { products, loading } = useProductsByCategory(id);
 
-    return <ItemListContainerComponent products={products} />;
+    return loading ? (
+        <LoaderComponent />
+    ) : (
+        <ItemListContainerComponent products={products} />
+    );
 };
 
 export default Category;

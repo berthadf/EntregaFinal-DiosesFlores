@@ -1,14 +1,20 @@
 import React from 'react';
-import { useProducts } from '../hooks/useProducts';
+import { useGetCollectionItems } from '../hooks/useGetCollectionItems';
 import ItemListContainerComponent from '../components/ItemListContainerComponent/ItemListContainerComponent';
 import LoaderComponent from '../components/LoaderComponent/LoaderComponent';
 
 const Home = () => {
-    const { products, loading } = useProducts();
+
+    React.useEffect(() => {
+        document.title = "Buffet saludable";
+    }, []);
+
+    const { items, loading } = useGetCollectionItems("products");
+
     return loading ? (
         <LoaderComponent />
     ) : (
-        <ItemListContainerComponent products={products} />
+        <ItemListContainerComponent products={items} />
     );
 };
 

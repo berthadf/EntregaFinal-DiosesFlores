@@ -4,22 +4,13 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import CartWidgetComponent from '../CartWidgetComponent/CartWidgetComponent';
-import { getAllCategories } from '../../services/products';
-
+import CartWidgetComponent from "../CartWidgetComponent/CartWidgetComponent";
+import { useGetCollectionItems } from '../../hooks/useGetCollectionItems';
 import "./NavBarComponent.css";
 
 const NavBarComponent = () => {
-    const [categories, setCategories] = React.useState([]);
-    React.useEffect(() => {
-        getAllCategories()
-            .then((res) => {
-                setCategories(res.data);
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-    });
+
+    const { items } = useGetCollectionItems("categories");
 
     return (
         <Navbar expand="lg" className="bg-body-tertiary, navBarComponent">
@@ -32,17 +23,17 @@ const NavBarComponent = () => {
                         height="30"
                         className="d-inline-block align-top"
                     />{' '}
-                    Cachivaches y más
+                    Buffet Saludable
                 </Link>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <NavDropdown title="Categorías" id="basic-nav-dropdown">
-                            {categories.map((category) => {
+                            {items.map((category) => {
                                 return (
-                                    <NavDropdown.Item key={category.slug}>
-                                        <Link to={`/category/${category.slug}`} className='linkButton'>{category.name}</Link>
+                                    <NavDropdown.Item key={category.id}>
+                                        <Link to={`/category/${category.slug}`} className='linkButton'> {category.category} </Link>
                                     </NavDropdown.Item>
                                 );
                             })};

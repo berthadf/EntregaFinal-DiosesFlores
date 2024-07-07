@@ -2,4 +2,9 @@
     color: #5bbec0;
     font-size: 1.3rem;
     margin-right: 0.5rem;
+    text-decoration: none;
+}
+
+.cartWidgetComponent:hover {
+    color: #4da3a4;
 }

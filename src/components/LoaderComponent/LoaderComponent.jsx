@@ -1,11 +1,12 @@
 import React from "react";
 import { grid } from "ldrs";
+import "./LoaderComponent.css";
 
 const LoaderComponent = () => {
     grid.register();
     return (
-        <div style={{ width: "100%", height: "50%", margin: "auto", color: "#5bbec0" }}>
-            <l-grid size="60" speed="1.5" color="white"></l-grid>
+        <div className="loader-container">
+            <l-grid className="loader" size="100" speed="1.5" color="white"></l-grid>
         </div>
     );
 };
